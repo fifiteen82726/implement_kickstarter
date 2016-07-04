@@ -16,3 +16,25 @@
 # state 集資狀態(a string of 'live', 'successful', 'failed', 'suspended', 'deleted', or 'canceled')
 
 # name photo   		goal     
+# create_table "projects", force: :cascade do |t|
+#     t.integer  "kickstart_id"
+#     t.string   "name"
+#     t.string   "photo_med"
+#     t.float    "pledged"
+#     t.float    "goal"
+#     t.integer  "backers_count"
+#     t.string   "state"
+#     t.datetime "deadline"
+#     t.datetime "created_at",    null: false
+#     t.datetime "updated_at",    null: false
+#   end
+Project.destroy_all
+
+
+client = Kickscraper.client
+c = client.recently_launched_projects
+c.each do |project|
+Project.create(kickstart_id: project.id, name: project.name, photo_med: project.photo["med"],
+				pledged: project.pledged, goal: project.goal, backers_count: project.backers_count,
+				state: project.state, deadline: project.deadline)	
+end
