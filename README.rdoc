@@ -1,28 +1,12 @@
-== README
+==README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+===User Story
+* 使用者會看到一個頁面可以呈現不同類別最新的集資專案
+* 使用者可以選擇要看哪一個類別的集資專案
+* 使用者可以透過 pagination 或是瀑布流的方式瀏覽更多專案
+* （加分）使用者可以透過關鍵字進行搜尋
+* （加分）資料抓下來後都可以實際存在資料庫中，建議使用 postgresql
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+===前端
+* 使用一個 js framework 去呈現這些集資專案
+* 使用者至少要能知道專案的標題、圖片、集資金額、目標金額、集資進度百分比、贊助人數、集資狀態，並且可以透過 pagination 或是瀑布流瀏覽更多。
