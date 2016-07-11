@@ -29,6 +29,9 @@
 #     t.datetime "updated_at",    null: false
 #   end
 Project.destroy_all
+Category.destroy_all
+
+
 
 
 client = Kickscraper.client
@@ -38,3 +41,17 @@ Project.create(kickstart_id: project.id, name: project.name, photo_med: project.
 				pledged: project.pledged, goal: project.goal, backers_count: project.backers_count,
 				state: project.state, deadline: project.deadline)	
 end
+
+# p1  = Project.first
+# p2 = Project.second
+
+
+category = client.categories
+
+category.each do |category|
+	Category.create(name: category.name)
+	end
+
+
+
+
