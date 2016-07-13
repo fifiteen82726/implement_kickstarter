@@ -3,12 +3,5 @@
 
 
 <% @category.projects.each do |project| %>
-
-<h1> 
-
-	<%#= link_to "#{cate.name}", cate %>
-<%#= cate.projects %>
-<%= project.name %>
-</h1>
-
+<%= link_to "#{project.name}", category_project_path(@category, project) %>
 <% end %>

@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  get 'categories/index'
+  
 
-  get '/categories/:id', to: 'categories#show' , as: 'category'
+  #get '/categories/:id', to: 'categories#show' , as: 'category'
 
-  get 'project/index'
+  #get '/categories/:id/projects/:p_id', to: 'projects#show', as: 'project'
 
-  get 'project/show' 
-
-
+  resources :categories, only: [:index, :show]  do
+    resources :projects, only: [:show]
+  end
+  
   root 'categories#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
