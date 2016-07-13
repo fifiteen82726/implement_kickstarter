@@ -28,6 +28,7 @@ gem 'kickscraper', :git => 'git://github.com/markolson/kickscraper.git'
 gem 'pry-rails'
 gem 'will_paginate'
 
+gem 'awesome_print'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

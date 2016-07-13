@@ -30,6 +30,7 @@ end
 c = client.recently_launched_projects
 c.each do |project|
 
+#抓到對應的 category
 cate = Category.find_by_name(project.category.name)
 
 
@@ -47,9 +48,13 @@ end
 5.times do |i|
 	c = client.load_more_projects if client.more_projects_available?
 	c.each do |project|
-		Project.create(kickstart_id: project.id, name: project.name, photo_med: project.photo["med"],
+		#抓到對應的 category
+	cate = Category.find_by_name(project.category.name) 
+	ap project.category.name
+		p = Project.create(kickstart_id: project.id, name: project.name, photo_med: project.photo["med"],
 			pledged: project.pledged, goal: project.goal, backers_count: project.backers_count,
 			state: project.state, deadline: project.deadline)	
+	cate.projects << p 	
 	end
 end
 

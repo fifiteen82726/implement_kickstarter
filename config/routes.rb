@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  get 'categories/index'
+
+  get '/categories/:id', to: 'categories#show' , as: 'category'
+
   get 'project/index'
 
-  get 'project/show'
+  get 'project/show' 
+
+
+  root 'categories#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
