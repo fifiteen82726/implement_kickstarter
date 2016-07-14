@@ -8,7 +8,7 @@ end
 def index
 
 	@q = Project.ransack(params[:q])
-	ap params[:q]
+	# ap params[:q]
 	@projects = @q.result(distinct: true)
 	#@projects = Project.all
 end

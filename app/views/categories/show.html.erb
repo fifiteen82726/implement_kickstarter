@@ -4,6 +4,15 @@
 <%= will_paginate @projects, :container => false %>
 </div>
 
+<%= search_form_for @q do |f| %>
+
+ 
+  <p>Projects name: </p>
+  <%= f.search_field :name_cont %>
+
+  <%= f.submit 'Search', :class => 'btn btn-success-outline' %>
+<% end %>
+
 <br>
 <% @projects.each do |project| %>
 <%= link_to "#{project.name}", category_project_path(@category, project) %>

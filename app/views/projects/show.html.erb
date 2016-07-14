@@ -2,12 +2,33 @@
 <p>Find me in app/views/project/show.html.erb</p>
 
 
+<center>
+  <h3>
+  <%= @project.name %>
+</h3>
+</center>
 
-<h1>
-	<%= @project.name %>
-</h1>
+<div class="col-md-12">
 
-<%= image_tag "#{@project.photo_med}" %>
+<div class="col-md-8 project-info">
+  <%= image_tag "#{@project.photo_full}", :class => "img-fluid" %>
+</div>
+
+<div class="col md-4">
+  <h1><%= @project.backers_count %></h1>
+  <p class= 'sub-info'>backers</p>
+  <br>
+
+ <h1>$<%= @project.pledged %></h1>
+  <p class= 'sub-info'>pledged of <%= @project.goal%> goal</p>
+  <br>
+
+ <h1><%= @project.deadline %></h1>
+  <p class= 'sub-info'>backers</p>
+  
+</div>
+</div>
+
 <br>
 現在集資金額 <%= @project.pledged %>
 目標金額 <%= @project.goal%>
@@ -47,6 +68,8 @@
   created_at: Wed, 13 Jul 2016 12:55:06 UTC +00:00,
   updated_at: Wed, 13 Jul 2016 13:57:29 UTC +00:00,
   category_id: 1733>] -->
+
+
 <script type="text/javascript">
 	
 
