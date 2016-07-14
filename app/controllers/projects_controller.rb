@@ -6,7 +6,11 @@ def show
 end
 
 def index
-	@projects = Project.all
+
+	@q = Project.ransack(params[:q])
+	ap params[:q]
+	@projects = @q.result(distinct: true)
+	#@projects = Project.all
 end
 
 def set_project
