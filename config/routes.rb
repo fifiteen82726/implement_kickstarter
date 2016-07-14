@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]  do
     resources :projects, only: [:show]
   end
+
+  get 'projects', to: 'projects#index'
   
   root 'categories#index'
 
