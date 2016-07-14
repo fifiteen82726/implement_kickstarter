@@ -29,6 +29,9 @@ gem 'pry-rails'
 gem 'will_paginate'
 
 gem 'awesome_print'
+
+
+gem 'sunspot_rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
