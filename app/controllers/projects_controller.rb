@@ -2,7 +2,8 @@ class ProjectsController < ApplicationController
 
 before_action :set_project, only: [:show]
 def show
-	
+	@day = Time.at(@project.deadline)
+	ap @day
 end
 
 def index
@@ -15,6 +16,7 @@ end
 
 def set_project
   	 @project = Project.find(params[:id])
-  	 ap params[:category_id]
+  	 # ap params[:category_id]
+
   end
 end

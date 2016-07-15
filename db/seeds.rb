@@ -45,15 +45,17 @@ end
 
 #再抓2000個
 
-20.times do |i|
+2.times do |i|
 	c = client.load_more_projects if client.more_projects_available?
 	c.each do |project|
 		#抓到對應的 category
 	cate = Category.find_by_name(project.category.name) 
 	ap i
+	p_deadline = 10
+	p_deadline = project.deadline
 		p = Project.create(kickstart_id: project.id, name: project.name, photo_med: project.photo["med"],
 			pledged: project.pledged, goal: project.goal, backers_count: project.backers_count,
-			state: project.state, deadline: project.deadline)	
+			state: project.state, deadline: p_deadline, photo_full: project.photo["full"])	
 	cate.projects << p 	
 	end
 end
