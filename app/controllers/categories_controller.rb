@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
 
   def show
 
-  	 @category = Category.find(params[:id])
+  	 @category = Category.includes(:projects).find(params[:id])
   	 @q = @category.projects.ransack(params[:q])
   	 @projects = @q.result(distinct: true)
   	 @projects = @projects.paginate(:page => params[:page], :per_page => 10)

@@ -51,11 +51,11 @@ end
 		#抓到對應的 category
 	cate = Category.find_by_name(project.category.name) 
 	ap i
-	p_deadline = 10
-	p_deadline = project.deadline
+	# p_deadline = 10
+	# p_deadline = project.deadline
 		p = Project.create(kickstart_id: project.id, name: project.name, photo_med: project.photo["med"],
 			pledged: project.pledged, goal: project.goal, backers_count: project.backers_count,
-			state: project.state, deadline: p_deadline, photo_full: project.photo["full"])	
+			state: project.state, deadline: project.deadline, photo_full: project.photo["full"])	
 	cate.projects << p 	
 	end
 end

@@ -2,8 +2,10 @@ class ProjectsController < ApplicationController
 
 before_action :set_project, only: [:show]
 def show
-	@day = Time.at(@project.deadline)
-	ap @day
+	@day = (Time.at(@project.deadline).to_date - Time.now.to_date).to_i 
+			 
+
+	# ap @day
 end
 
 def index
